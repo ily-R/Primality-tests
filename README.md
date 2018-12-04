@@ -2,7 +2,7 @@
 Fermat and Miller-Rabin primality tests as well as different important functions.
 *my_gcd(a, b):
 
-*my_inverse(a, N):
+*my_inverse(a, N):*
 
 *my_expo_mod(g, n, N):
 
