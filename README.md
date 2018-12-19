@@ -1,8 +1,6 @@
 # Primality-tests
-Fermat and Miller-Rabin primality tests as well as different important functions.
-*my_gcd(a, b):*
+*my_gcd(a, N)* returns the great common divisor between a and N. *my_inverse(a, N)* returns the modulo N inverse of a such that a*u0 is congurent to 1 modulo N using Extended Euclidean Algorithm. Theoretically, they have the same complexity O(bitsize(a) * bitsize(N)). Using *complexity_test()* we approve this by the following figure.
 
-*my_inverse(a, N):*
 
 *my_expo_mod(g, n, N):*
 
