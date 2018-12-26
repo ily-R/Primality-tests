@@ -12,18 +12,28 @@ The pertubations can be explained by the fact that for a certain bitsize, the gc
 
 *carmichael_1(N)* and *carmichael_2(N)* generate a list of Carmichael numbers less than an input limit **N**. a charmicael number **n** is a composite number such that for every **a** coprime with **n** **a^n - n** divides **n**. The two functions follow different approaches.
 
+**note:** we implement **a^n mod n** using the function *my_expo_mod()*
+
 *carmichael_1(N):*
 1- pick a number **n** by iterating through all the odd numbers from 3 to N-1.
-2- check if **n** is 100% prime by using the naive test implemented in *first_test(n)*.
-3- if **n** is prime, go to **1**. if **n** is not prime then we check for all **a** such that **1 < a < n**. We check if **a** is coprime with **n** using *my_gcd(a, n)* then we check if **a^n - n** divides **n**.if not go to **1**. if so, test with next **a**. if it holds for all **a** then **n** is a carmichael number. 
+2- check if **n** is a 100% prime number by using the naive test implemented in *first_test(n)*.
+3- if **n** is prime, go to **1**. if **n** is not prime then for all **a** such that **1 < a < n** and **a** is coprime with **n** we check if **a^n - n** divides **n**.if not, go to **1**. if so, test with the next **a**. if it holds for all **a** then **n** is a carmichael number. 
 
-*my_expo_mod(g, n, N):*
+*carmichael_2(N):*
+1- pick a number **n** by iterating through all the odd numbers from 3 to N-1.
+2- for all **a** such that **1 < a < n** and **a** is coprime with **n** we check if **a^n - n** divides **n**.if not, go to **1**. if so, test with the next **a**. if it holds for all **a** go to **3**
+3- check if **n** is a 100% prime number by using the naive test implemented in *first_test(n)*. if so, go to **1**. Else,then **n** is a carmichael number.
+
+Using *carmichael_complexity()* We see in the figure below that *carmichael_1* is way faster than *carmichael_2*. For instance, within 4 seconds *carmichael_1* can process about 10^5 numbers compared with 3000 using *carmichael_2*
+![](https://github.com/ilyasAr/Primality-tests/blob/master/pt1.png)
+
+Here's a clear version of the red graph.
+![](https://github.com/ilyasAr/Primality-tests/blob/master/pt2.png)
+
 
 
 
 *carmichael_3(N, primes):*
-
-*carmichael_complexity():*
 
 *gen_carmichael_1(n):*
 
