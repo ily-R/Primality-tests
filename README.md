@@ -31,28 +31,33 @@ Here's a clear version of the red graph.
 ![](https://github.com/ilyasAr/Primality-tests/blob/master/pt2.png)
 
 
+*gen_carmichael_1(n):* generates all the carmichael numbers less than **n** with 3 prime factors.
 
+Suppose we have a carmichael number **n** with 3 prime factors **pqr** with **p < q < r**, then if we fix **p** the list of the corresponding carmichaels is finite.
 
-*carmichael_3(N, primes):*
+**proof:** We just need to find an upper bound for **r**. Using Korselt Theoreme we know that **(r-1)** divides **(n - 1)** So:
 
-*gen_carmichael_1(n):*
+r - 1 | pqr - 1 = pq (r – 1 + 1) - 1 = pq (r - 1) + pq - 1 which means that  r - 1 | pq - 1.
 
-*gen_carmichael_2(n):*
+Similarly: q - 1 | pr - 1. whcih means there exist h and k such that: pq - 1 = h (r - 1) and k (q - 1) = pr - 1. 
 
-*gen_carmichael_complexity():*
+Developing the above we can prove that: (hk- p²) (q-1) = (p+h) (p-1)
 
-*gen_carmichael_p(p):*
+as h < p we see that q < 2p(p-1) + 1
 
-*fermat_test(n, k):*
+and from r - 1 | pq - 1 we know that r < pq . So using the above upper bound of q we find r < p (2p (p – 1) + 1).
 
-*tester_fermat_test():*
+*gen_carmichael_p(p):* get as input the prime factor **p** and generate all the carmichael **n** such that **n = pqr** and                r < p (2p (p – 1) + 1).
 
-*fermat_test_success_probability(max_number):*
+*fermat_test_success_probability(max_number)* tests the Failure probability of the fermat test implemented in *fermat_test(n, k)* by increasing the value of *k* .
+
+![](https://github.com/ilyasAr/Primality-tests/blob/master/pt3.png)
 
 *miller_rabin_test(n, k):*
 
-*tester_millier_test():*
+*miller_rabin_test_success_probability(max_number)* tests the Failure probability of the miller_rabin_test implemented in *miller_rabin_test(n, k)* by increasing the value of *k* .
+ 
+![](https://github.com/ilyasAr/Primality-tests/blob/master/pt5.png)
 
-*miller_rabin_test_success_probability(max_number):*
 
-*gen_rsa(t):*
+In both tests the more we increase *k* the more we indorse the correctness of the test's result. 
