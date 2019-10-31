@@ -6,7 +6,9 @@ So the arithmetic complexity of my_gcd is bounded by **O(bitsize (a) * bitsize (
 
 Using *complexity_test()* we approve this by the following figure. 
 
-![](https://github.com/ilyasAr/Primality-tests/blob/master/gcd_inverse.png)
+<p align="center">
+  <img src="https://github.com/ily-R/Primality-tests/blob/master/gcd_inverse.png?raw=true" alt="capture reconstruction"/>
+</p>
 
 - The pertubations can be explained by the fact that for a certain bitsize, the gcd between **a** and **b** may be too close to **b** and thus the computation time will be small. On the other hand, if it is far from **b** then the computation time will be significant relatively. However, on average, we have always a linearity with respect to **bitsize (a) * bitsize (b)**.
 
@@ -25,11 +27,16 @@ Using *complexity_test()* we approve this by the following figure.
 3- check if **n** is a 100% prime number by using the naive test implemented in *first_test(n)*. if so, go to **1**. Else,then **n** is a carmichael number.
 
 Using *carmichael_complexity()* We see in the figure below that *carmichael_1* is way faster than *carmichael_2*. For instance, within 4 seconds *carmichael_1* can process about 10^5 numbers compared with 3000 using *carmichael_2*
-![](https://github.com/ilyasAr/Primality-tests/blob/master/pt1.png)
+
+<p align="center">
+  <img src="https://github.com/ily-R/Primality-tests/blob/master/pt1.png?raw=true" alt="capture reconstruction"/>
+</p>
 
 Here's a clear version of the red graph.
-![](https://github.com/ilyasAr/Primality-tests/blob/master/pt2.png)
 
+<p align="center">
+  <img src="https://github.com/ily-R/Primality-tests/blob/master/pt2.png?raw=true" alt="capture reconstruction"/>
+</p>
 
 - *gen_carmichael_1(n):* generates all the carmichael numbers less than **n** with 3 prime factors.
 
@@ -50,12 +57,14 @@ and from r - 1 | pq - 1 we know that r < pq . So using the above upper bound of 
 - *gen_carmichael_p(p):* get as input the prime factor **p** and generate all the carmichael **n** such that **n = pqr** and                r < p (2p (p – 1) + 1).
 
 - *fermat_test_success_probability(max_number)* tests the Failure probability of the fermat test implemented in *fermat_test(n, k)* by increasing the value of *k* .
-
-![](https://github.com/ilyasAr/Primality-tests/blob/master/pt3.png)
+<p align="center">
+  <img src="https://github.com/ily-R/Primality-tests/blob/master/pt3.png.png?raw=true" alt="capture reconstruction"/>
+</p>
 
 - *miller_rabin_test_success_probability(max_number)* tests the Failure probability of the miller_rabin_test implemented in *miller_rabin_test(n, k)* by increasing the value of *k* .
  
-![](https://github.com/ilyasAr/Primality-tests/blob/master/pt5.png)
-
+<p align="center">
+  <img src="https://github.com/ily-R/Primality-tests/blob/master/pt5.png?raw=true" alt="capture reconstruction"/>
+</p>
 
 In both tests the more we increase *k* the more we indorse the correctness of the test's result. 
