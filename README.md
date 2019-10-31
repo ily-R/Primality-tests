@@ -58,7 +58,7 @@ and from r - 1 | pq - 1 we know that r < pq . So using the above upper bound of 
 
 - *fermat_test_success_probability(max_number)* tests the Failure probability of the fermat test implemented in *fermat_test(n, k)* by increasing the value of *k* .
 <p align="center">
-  <img src="https://github.com/ily-R/Primality-tests/blob/master/README_data/pt3.png.png?raw=true" alt="capture reconstruction"/>
+  <img src="https://github.com/ily-R/Primality-tests/blob/master/README_data/pt3.png?raw=true" alt="capture reconstruction"/>
 </p>
 
 - *miller_rabin_test_success_probability(max_number)* tests the Failure probability of the miller_rabin_test implemented in *miller_rabin_test(n, k)* by increasing the value of *k* .
